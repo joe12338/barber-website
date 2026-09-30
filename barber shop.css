@@ -1,0 +1,908 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f1eee8;
+    --dark: #11110f;
+    --text: #22211e;
+    --gray: #77736b;
+    --gold: #c9a66b;
+    --line: rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    padding: 0 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(17, 17, 15, 0.9);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    z-index: 1000;
+}
+
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo span {
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.7;
+}
+
+
+.book-button {
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid white;
+
+    padding: 12px 20px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.book-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.8)
+        ),
+        linear-gradient(
+            135deg,
+            #35332e,
+            #0b0b0a
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.small-title {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+}
+
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(100px, 18vw, 220px);
+
+    line-height: 0.8;
+
+    margin: 30px 0 10px;
+}
+
+
+.subtitle {
+    letter-spacing: 10px;
+
+    font-size: 15px;
+}
+
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 15px 25px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.hero-button:hover {
+    background: white;
+    color: black;
+}
+
+
+.scroll-down {
+    position: absolute;
+
+    bottom: 30px;
+
+    color: white;
+
+    font-size: 25px;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 120px 5%;
+}
+
+
+.section-number {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+
+.section h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 7vw, 90px);
+
+    line-height: 0.95;
+}
+
+
+em {
+    font-weight: normal;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 100px;
+}
+
+
+.story-text {
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+
+.story-text p + p {
+    margin-top: 20px;
+}
+
+
+.years {
+    margin-top: 35px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: black;
+}
+
+
+/* =========================
+   DARK SECTIONS
+========================= */
+
+.dark {
+    max-width: none;
+
+    background: var(--dark);
+
+    color: white;
+
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+.heading {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+}
+
+
+.heading p {
+    color: #999;
+
+    max-width: 300px;
+}
+
+
+/* =========================
+   TEAM
+========================= */
+
+.team {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 70px;
+}
+
+
+.barber-photo {
+    height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 80px;
+
+    color: rgba(255,255,255,0.2);
+
+    background:
+        linear-gradient(
+            135deg,
+            #36342e,
+            #171715
+        );
+}
+
+
+.team-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-top: 15px;
+}
+
+
+.team-card p {
+    color: #888;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-auto-rows: 280px;
+
+    gap: 15px;
+
+    margin-top: 50px;
+}
+
+
+.gallery-item {
+    position: relative;
+
+    display: flex;
+
+    align-items: end;
+
+    padding: 25px;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+.gallery-item span {
+    position: relative;
+
+    z-index: 2;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.fade {
+    background: linear-gradient(135deg, #292722, #a78d6b);
+}
+
+
+.texture {
+    background: linear-gradient(135deg, #777065, #292824);
+}
+
+
+.beard {
+    background: linear-gradient(135deg, #151513, #625344);
+}
+
+
+.classic {
+    background: linear-gradient(135deg, #a99e8d, #45423b);
+}
+
+
+.detail {
+    background: linear-gradient(135deg, #292824, #a98c67);
+}
+
+
+/* Make first and last gallery items larger */
+
+.gallery-item:first-child {
+    grid-column: span 2;
+}
+
+
+.gallery-item:last-child {
+    grid-column: span 2;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    margin-top: 50px;
+}
+
+
+.service {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #383733;
+}
+
+
+.service h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+}
+
+
+.service p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+.service strong {
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   AUDIENCE
+========================= */
+
+.audience {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 100px;
+
+    margin-top: 50px;
+}
+
+
+.audience-list {
+    border-top: 1px solid var(--line);
+}
+
+
+.audience-list div {
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.audience-list span {
+    color: var(--gold);
+
+    font-size: 12px;
+}
+
+
+.audience-list h3 {
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    margin: 5px 0;
+}
+
+
+.audience-list p {
+    color: var(--gray);
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking {
+    background: #ded9cf;
+
+    padding: 120px 10%;
+}
+
+
+.booking-container {
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 100px;
+}
+
+
+.booking-container > div > p {
+    color: var(--gray);
+
+    max-width: 400px;
+
+    margin-top: 25px;
+
+    line-height: 1.7;
+}
+
+
+#bookingForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+#bookingForm label {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+#bookingForm input,
+#bookingForm select {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #aaa;
+
+    background: rgba(255,255,255,0.5);
+
+    outline: none;
+}
+
+
+#bookingForm input:focus,
+#bookingForm select:focus {
+    border-color: black;
+}
+
+
+.date-time {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.date-time div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+#bookingForm button {
+    margin-top: 20px;
+
+    padding: 16px;
+
+    border: none;
+
+    background: black;
+
+    color: white;
+
+    cursor: pointer;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+#bookingForm button:hover {
+    background: var(--gold);
+}
+
+
+#message {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+    padding: 140px 5%;
+
+    text-align: center;
+
+    background: var(--gold);
+}
+
+
+.quote-mark {
+    font-family: Georgia, serif;
+
+    font-size: 80px;
+
+    line-height: 0.5;
+}
+
+
+.quote h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 6vw, 75px);
+
+    line-height: 1;
+
+    margin: 25px auto;
+}
+
+
+.quote p {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 70px 5% 30px;
+
+    background: #0b0b0a;
+
+    color: white;
+}
+
+
+footer .logo {
+    margin-bottom: 15px;
+}
+
+
+footer > div:first-child p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.footer-info {
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+.footer-info strong {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.footer-info p {
+    color: #888;
+
+    margin-top: 10px;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+.copyright {
+    border-top: 1px solid #292927;
+
+    padding-top: 25px;
+
+    text-align: center;
+
+    color: #555;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 20px;
+    }
+
+
+    .logo {
+        font-size: 20px;
+    }
+
+
+    .book-button {
+        padding: 10px 13px;
+
+        font-size: 10px;
+    }
+
+
+    .section {
+        padding-top: 80px;
+
+        padding-bottom: 80px;
+    }
+
+
+    .story,
+    .audience,
+    .booking-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .heading {
+        display: block;
+    }
+
+
+    .heading p {
+        margin-top: 25px;
+    }
+
+
+    .team {
+        grid-template-columns: 1fr;
+    }
+
+
+    .barber-photo {
+        height: 330px;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .gallery-item:first-child,
+    .gallery-item:last-child {
+        grid-column: span 2;
+    }
+
+
+    .footer-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 80px;
+    }
+
+
+    .subtitle {
+        letter-spacing: 5px;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-item:first-child,
+    .gallery-item:last-child {
+        grid-column: span 1;
+    }
+
+
+    .date-time {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
